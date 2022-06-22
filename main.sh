@@ -17,7 +17,6 @@ autoupdate() {
 }
 
 autoupdate
-#testa
 
 # global functions
 scriptbanner() {
