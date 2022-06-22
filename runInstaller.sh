@@ -1,18 +1,23 @@
 #!bin/sh
 
-getInstallDirectory() (
-    local defaultInstallDirectory=~/.user.scripts
-    printf "Please enter the installation path. [ $defaultInstallDirectory ] : "
+getInstallDirectory() {
+    local defaultDirectory=$HOME/.user.scripts
+    printf "Please enter the installation path. [ $defaultDirectory ] : "
     local inputDirectory
     read inputDirectory
-    [ -z $inputDirectory ] && inputDirectory=$(readlink -e $defaultInstallDirectory)
-    echo $inputDirectory
-)
+    installDirectory=$(readlink -e ${inputDirectory:-${defaultDirectory}})
+    [ -z $installDirectory ] && echo "no such directory '${inputDirectory}'." && return 255
+    return 0
+}
 
 run() (
-    installDirectory=getInstallDirectory
+    installDirectory=""
+    getInstallDirectory
+    [ $? -ne "0" ] && exit 0
+    echo
+    echo "Start installing userscript in path '${installDirectory}'."
+    echo
 
-    # printf "target install directory is '$installDirectory'."
 )
 
 run
