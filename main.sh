@@ -11,12 +11,13 @@ autoupdate() {
     [ ! -f $USER_SCRIPT_VERSION_FILE ] && echo $lastestCommit >$USER_SCRIPT_VERSION_FILE
     commit=$(cat $USER_SCRIPT_VERSION_FILE)
     echo "commit : ${commit}"
-    echo "lastestCommit : ${lastestCommit}"
+    echo "lasgit logtestCommit : ${lastestCommit}"
     [ "$commit" != "$lastestCommit" ] && echo "need updated."
     # [ "commit" != "lastestCommit" ] && $(cd $USER_SCRIPT_HOME && git pull)
 }
 
 autoupdate
+#test
 
 # global functions
 scriptbanner() {
