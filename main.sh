@@ -9,7 +9,7 @@ autoupdate() {
 }
 
 autoupdate
-
+#test
 # global functions
 scriptbanner() {
     echo "user scripts version ${userScriptVersion}"
