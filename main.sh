@@ -4,8 +4,7 @@ USER_MODULE_PATH=${USER_SCRIPT_HOME}/.modules
 USER_SCRIPT_VERSION_FILE=${USER_SCRIPT_HOME}/.git-commit.ignore
 
 autoupdate() {
-    updateLog=$(cd $USER_SCRIPT_HOME && git pull)
-    echo $updateLog
+    cd $USER_SCRIPT_HOME && git pull
 }
 
 autoupdate
