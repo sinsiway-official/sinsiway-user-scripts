@@ -4,7 +4,7 @@ USER_MODULE_PATH=${USER_SCRIPT_HOME}/.modules
 USER_SCRIPT_VERSION_FILE=${USER_SCRIPT_HOME}/.git-commit.ignore
 
 autoupdate() {
-    cd $USER_SCRIPT_HOME && git pull
+    (cd $USER_SCRIPT_HOME && git pull)
 }
 
 autoupdate
