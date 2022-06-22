@@ -8,7 +8,6 @@ autoupdate() {
 }
 
 autoupdate
-#test
 
 # global functions
 scriptbanner() {
